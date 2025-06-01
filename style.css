@@ -1,0 +1,215 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    background-color: #f9f6f1;
+    font-family: 'Noto Sans', sans-serif;
+    color: #1e3a3a;
+    text-align: center;
+    margin: 0;
+    padding: 1.25rem;
+}
+
+.container {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #fffdf5, #f2f5f3);
+    padding: 1.875rem 1.5625rem;
+    border: 0.1875rem solid #c2a84d;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #c2a84d;
+    text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(30, 58, 58, 0.3);
+    margin-bottom: 1.5625rem;
+}
+
+#question {
+    font-size: 1.6em;
+    margin-bottom: 1.25rem;
+    color: #2a3d3d;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.option-btn {
+    background-color: #1e3a3a;
+    color: #ffffff;
+    border: 0.125rem solid #c2a84d;
+    padding: 0.75rem;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+    background-color: #2a4f4f;
+}
+
+#feedback {
+    margin-top: 1.25rem;
+    font-size: 1.2em;
+    color: #1e3a3a;
+}
+
+.next-btn {
+    display: none;
+    margin-top: 1.5625rem;
+    padding: 0.625rem 1.5rem;
+    background-color: #c2a84d;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.next-btn:hover {
+    background-color: #ab913e;
+}
+
+#result {
+    font-size: 1.5em;
+    color: #c2a84d;
+    margin-top: 1.5625rem;
+}
+
+
+header {
+    text-align: center;
+    padding: 2.5rem 1.25rem 1.25rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 0.1875rem solid #c2a84d;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.875rem;
+    border-radius: 0 0 0.9375rem 0.9375rem;
+}
+
+
+header h1 {
+    font-size: 3em;
+    color: #c2a84d;
+    text-shadow: 0.125rem 0.125rem rgba(30, 58, 58, 0.2);
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    justify-items: center;
+}
+
+.card {
+    background: linear-gradient(to bottom, #fffdf5, #f2f5f3);
+    padding: 1.5rem 1rem;
+    border: 2px solid #c2a84d;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: auto;
+    height: 400px; /* portrait format */
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card-text h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5em;
+    color: #1e3a3a;
+}
+
+.card-text p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #2a3d3d;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 700px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 350px;
+    }
+}
+
+
+/* Twin card layout: side-by-side Apollo and Artemis */
+.twin-card .twin-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.twin-card .twin-image {
+    position: relative;
+    flex: 1;
+}
+
+.twin-card .twin-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.twin-card .twin-label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #1e3a3a;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9em;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+
+.intro-card {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+}

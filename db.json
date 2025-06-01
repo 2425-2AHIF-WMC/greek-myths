@@ -1,0 +1,94 @@
+﻿{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Which animal represents Athena",
+            "options": [
+                {"text": "Bear", "isCorrect": false},
+                {"text": "Owl", "isCorrect": true},
+                {"text": "Fish", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 2,
+            "question": "Which part of the underworld was reserved for the wicked and those who defied the gods?",
+            "options": [
+                {"text": "Tartarus", "isCorrect": true},
+                {"text": "Erebus", "isCorrect": false},
+                {"text": "Elysium", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 3,
+            "question": "What was Odysseus' goal after the Trojan War?",
+            "options": [
+                {"text": "To conquer Athens", "isCorrect": false},
+                {"text": "To return to Ithaca", "isCorrect": true},
+                {"text": "To search for Atlantis", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 4,
+            "question": "What is Hephaistos the god of?",
+            "options": [
+                {"text": "Fire", "isCorrect": true},
+                {"text": "Music", "isCorrect": false},
+                {"text": "War", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 5,
+            "question": "What was the significance of coins placed in the mouths of the dead in Greek burial customs?",
+            "options": [
+                {"text": "To bribe Cerberus to allow entry", "isCorrect": false},
+                {"text": "To pay Charon for passage across the river", "isCorrect": true},
+                {"text": "To symbolize wealth in the afterlife", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 6,
+            "question": "What mistake did Icarus make that led to his death?",
+            "options": [
+                {"text": "He lost his wings in a storm", "isCorrect": false},
+                {"text": "He flew too close to the sun", "isCorrect": true},
+                {"text": "He flew too close to the ground", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 7,
+            "question": "Who wasn't actually born?",
+            "options": [
+                {"text": "Aphrodite", "isCorrect": true},
+                {"text": "Zeus", "isCorrect": false},
+                {"text": "Persephone", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 8,
+            "question": "What was the role of Charon in the Greek underworld?",
+            "options": [
+                {"text": "He transported souls across the river Acheron", "isCorrect": true},
+                {"text": "He judged the souls of the dead", "isCorrect": false},
+                {"text": "He guarded the entrance to the underworld", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 9,
+            "question": "Which two gods are not Olympians anymore?",
+            "options": [
+                {"text": "Dionysus and Hestia", "isCorrect": false},
+                {"text": "Hestia and Hades", "isCorrect": true},
+                {"text": "Athena and Hermes", "isCorrect": false}
+            ]
+        },
+        {
+            "id": 10,
+            "question": "What happens if you look directly into Medusa's eyes?",
+            "options": [
+                {"text": "You lose your memory", "isCorrect": false},
+                {"text": "You get cursed and haunted", "isCorrect": false},
+                {"text": "You turn to stone", "isCorrect": true}
+            ]
+        }
+    ]
+}
