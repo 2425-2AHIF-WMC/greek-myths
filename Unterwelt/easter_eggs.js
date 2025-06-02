@@ -233,10 +233,7 @@ function initializeStyxRiver() {
     document.addEventListener('keydown', function(e) {
         if (e.altKey && e.key.toLowerCase() === 's') {
             isTrailActive = !isTrailActive;
-            if (isTrailActive) {
-                console.log('🌊 Der Styx-Fluss folgt deinem Cursor!');
-            } else {
-                console.log('🌊 Der Styx-Fluss kehrt in die Unterwelt zurück.');
+            if (!isTrailActive) {
                 styxTrail.forEach(drop => drop.remove());
                 styxTrail = [];
             }
@@ -247,7 +244,7 @@ function initializeStyxRiver() {
         if (!isTrailActive) return;
 
         const drop = document.createElement('div');
-        drop.innerHTML = ['💧', '🌊', '💙'][Math.floor(Math.random() * 3)];
+        drop.innerHTML = ['💧', '🔷', '💙', '🔹'][Math.floor(Math.random() * 3)];
         drop.style.cssText = `
             position: fixed;
             top: ${e.clientY}px;
@@ -423,6 +420,36 @@ function addPandoraAnimations() {
 }
 
 
+function initializeFlowerRain() {
+    document.addEventListener('keydown', function(event) {
+        if (event.altKey && event.key.toLowerCase() === 'p') {
+            flowerRain();
+        }
+    });
+}
+
+function flowerRain() {
+    const flowers = ["🌸", "🌼", "💐", "🌺", "🌷"];
+    for (let i = 0; i < 40; i++) {
+        const flower = document.createElement("div");
+        flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.position = "fixed";
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.top = "-50px";
+        flower.style.fontSize = (Math.random() * 2 + 1) + "rem";
+        flower.style.zIndex = 9999;
+        flower.style.pointerEvents = "none";
+        flower.style.transition = "transform 5s ease-out, opacity 5s ease-out";
+        document.body.appendChild(flower);
+
+        requestAnimationFrame(() => {
+            flower.style.transform = `translateY(${Math.random() * 100 + 100}vh) rotate(${Math.random() * 360}deg)`;
+            flower.style.opacity = "0";
+        });
+
+        setTimeout(() => flower.remove(), 5000);
+    }
+}
 
 // HAUPTINITIALISIERUNG
 function initializeAllEasterEggs() {
@@ -443,12 +470,11 @@ function initializeEasterEggs() {
         initializeCharonCoins();
         initializeStyxRiver();
         initializePandoraBox();
-
+        initializeFlowerRain(); // <--- HIER EINBAUEN
 
     } catch (error) {
         console.error('Easter-Eggs are not working', error);
     }
 }
 
-// ===== SOFORTIGE AUSFÜHRUNG =====
 initializeAllEasterEggs();
