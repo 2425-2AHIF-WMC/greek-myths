@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey through the Greek Underworld</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="easter_eggs.js" defer></script>
+
+</head>
+<body>
+<div class="side-nav">
+    <div class="nav-icon">☰</div>
+    <div class="nav-links">
+        <a href="index.html">Intro</a>
+        <a href="flashcards_gods.html">flashcards</a>
+        <a href="götter/hades">hades</a>
+        <a href="götter/cerberus.html">cerberus</a>
+        <a href="götter/charon.html">charon</a>
+        <a href="götter/persephone.html">persephone</a>
+        <a href="myths.html">myths</a>
+        <a href="game.html">the Path through the Underworld</a>
+    </div>
+</div>
+<header>
+    <h1>🏛️ The Journey through the Greek Underworld</h1>
+    <p class="subtitle">A Greek Mythology Choice Game</p>
+</header>
+<div class = "container">
+    <div class="game-container">
+
+
+
+        <div class="karma-display">
+            <div>Karma: <span id="karma-text">Neutral</span></div>
+            <div class="karma-bar">
+                <div id="karma-fill" class="karma-fill karma-neutral"></div>
+            </div>
+        </div>
+
+        <!-- Scene 1: Start -->
+        <div id="scene-start" class="scene active">
+            <!--<div class="scene-image charon"></div>-->
+
+            <img src="pics/Charon.webp" height="200" width="200"/>
+            <div class="story-text">
+                You stand on the dark shore of the Styx. Charon, the grim ferryman, awaits with his rusty boat. His glowing eyes examine you carefully. You hear the wailing of lost souls in the mist.
+                <br><br>
+                "Another soul," Charon growls in his deep voice. "Do you have the obolus for the crossing?"
+            </div>
+            <div class="choices">
+                <button class="choice-btn" onclick="makeChoice('honest')">
+                    "I have no coin, but I was an honest person."
+                </button>
+                <button class="choice-btn" onclick="makeChoice('bribe')">
+                    "Here, take this stolen gold coin for your service."
+                </button>
+                <button class="choice-btn" onclick="makeChoice('threaten')">
+                    "Take me across, or I’ll throw you into the Styx!"
+                </button>
+            </div>
+        </div>
+
+        <!-- Scene 2: Cerberus -->
+        <div id="scene-cerberus" class="scene">
+            <img src="pics/Cerberus.webp" height="200" width="200"/>
+            <div class="story-text">
+                At the gates of Hades stands Cerberus, the three-headed hellhound. His six red eyes glow like embers, and drool drips from his massive fangs. A deafening roar shakes the underworld.
+                <br><br>
+                The middle head growls menacingly while the other two circle around you.
+            </div>
+            <div class="choices">
+                <button class="choice-btn" onclick="makeChoice('kind')">
+                    Speak to him gently and show respect
+                </button>
+                <button class="choice-btn" onclick="makeChoice('trick')">
+                    Try to distract him with a trick
+                </button>
+                <button class="choice-btn" onclick="makeChoice('fight')">
+                    Attack the hellhound directly
+                </button>
+            </div>
+        </div>
+
+        <!-- Scene 3: The Judges -->
+        <div id="scene-judges" class="scene">
+            <img src="pics/judges_of_the_underworld.jpg" width="350"/>
+            <div class="story-text">
+                You stand before the three judges of the underworld: Minos, Rhadamanthys, and Aeacus. They sit on marble thrones, their faces stern and merciless. Before them lies a golden scale weighing your deeds.
+                <br><br>
+                Minos speaks with a thunderous voice: "Soul, tell us of your greatest deed in life."
+            </div>
+            <div class="choices">
+                <button class="choice-btn" onclick="makeChoice('heroic')">
+                    "I saved a child from a burning house."
+                </button>
+                <button class="choice-btn" onclick="makeChoice('selfish')">
+                    "I always took good care of myself."
+                </button>
+                <button class="choice-btn" onclick="makeChoice('evil')">
+                    "I took what I wanted, without caring for others."
+                </button>
+            </div>
+        </div>
+
+        <!-- Scene 4: Final Trial -->
+        <div id="scene-test" class="scene">
+            <img src="pics/three_realms.jpg" width="300">
+            <div class="story-text">
+                The judges have spoken, but a final trial awaits. Before you appear three paths leading into the depths of the underworld. A mysterious shadow whispers:
+                <br><br>
+                "Choose wisely, mortal. One path leads to eternal bliss, one to endless boredom, and one to unimaginable torment. Your final choice will seal your fate."
+            </div>
+            <div class="choices">
+                <button class="choice-btn" onclick="makeChoice('compassion')">
+                    "I choose the path another would avoid."
+                </button>
+                <button class="choice-btn" onclick="makeChoice('wisdom')">
+                    "I follow the path my wisdom shows me."
+                </button>
+                <button class="choice-btn" onclick="makeChoice('power')">
+                    "I take the path that promises the most power."
+                </button>
+            </div>
+        </div>
+
+        <!-- Ending: Elysium -->
+        <div id="end-elysion" class="scene">
+
+            <img src="pics/elysium.jpg"  height="200" />
+            <div class="final-message elysion-end">
+                You have reached the Elysian Fields!
+            </div>
+            <div class="story-text">
+                You enter a land of indescribable beauty. Golden meadows stretch to the horizon, crystal-clear streams babble softly, and the scent of ambrosia fills the air. Here, heroes and the righteous dwell in eternal bliss.
+                <br><br>
+                Your noble deeds and pure heart have earned you this paradise of the Greek underworld. You shall live forever in peace and joy.
+            </div>
+            <button class="restart-btn" onclick="restart()">Start a New Journey</button>
+        </div>
+
+        <!-- Ending: Asphodel Meadows -->
+        <div id="end-asphodel" class="scene">
+
+            <img src="pics/asphodel.jpg"  height="200" />
+            <div class="final-message asphodel-end">
+                You now wander the Asphodel Meadows
+            </div>
+            <div class="story-text">
+                You find yourself in an endless grey plain, covered with pale asphodel flowers. Here wander the souls who were neither particularly good nor evil. Eternal twilight reigns, and time has no meaning.
+                <br><br>
+                Your average deeds have led you to this neutral existence. You will remain here in peaceful but monotonous rest—neither rewarded nor punished.
+            </div>
+            <button class="restart-btn" onclick="restart()">Start a New Journey</button>
+        </div>
+
+        <!-- Ending: Tartarus -->
+        <div id="end-tartaros" class="scene">
+
+            <img src="pics/tartarus.webp" height="200" />
+            <div class="final-message tartaros-end">
+                You have been banished to Tartarus!
+            </div>
+            <div class="story-text">
+                You plunge into the deepest pits of the underworld. Here, in Tartarus, criminals and blasphemers suffer eternal torment. Rivers of fire flow through black rocks, and the howls of the damned fill the air.
+                <br><br>
+                Your wicked deeds and cold-hearted behavior have doomed you to this terrible fate. Here you will atone for your sins.
+            </div>
+            <button class="restart-btn" onclick="restart()">Start a New Journey</button>
+        </div>
+    </div>
+
+    <!-- The rest of the JavaScript remains unchanged -->
+
+
+    <script>
+        let karma = 0; // -100 bis +100
+        let currentScene = 'start';
+
+        const scenes = {
+            start: 'scene-start',
+            cerberus: 'scene-cerberus',
+            judges: 'scene-judges',
+            test: 'scene-test',
+            elysion: 'end-elysion',
+            asphodel: 'end-asphodel',
+            tartaros: 'end-tartaros'
+        };
+
+        function updateKarma(change) {
+            karma = Math.max(-100, Math.min(100, karma + change));
+
+            const karmaText = document.getElementById('karma-text');
+            const karmaFill = document.getElementById('karma-fill');
+
+            let karmaLabel, karmaClass, fillWidth;
+
+            if (karma > 30) {
+                karmaLabel = 'Edel';
+                karmaClass = 'karma-good';
+                fillWidth = 50 + (karma / 2);
+            } else if (karma < -30) {
+                karmaLabel = 'Böse';
+                karmaClass = 'karma-bad';
+                fillWidth = 50 + (karma / 2);
+            } else {
+                karmaLabel = 'Neutral';
+                karmaClass = 'karma-neutral';
+                fillWidth = 50 + (karma / 2);
+            }
+
+            karmaText.textContent = karmaLabel;
+            karmaFill.className = `karma-fill ${karmaClass}`;
+            karmaFill.style.width = fillWidth + '%';
+        }
+
+        function showScene(sceneKey) {
+            document.querySelectorAll('.scene').forEach(scene => {
+                scene.classList.remove('active');
+            });
+
+            document.getElementById(scenes[sceneKey]).classList.add('active');
+            currentScene = sceneKey;
+        }
+
+        function makeChoice(choice) {
+            switch(currentScene) {
+                case 'start':
+                    handleStartChoice(choice);
+                    break;
+                case 'cerberus':
+                    handleCerberusChoice(choice);
+                    break;
+                case 'judges':
+                    handleJudgesChoice(choice);
+                    break;
+                case 'test':
+                    handleTestChoice(choice);
+                    break;
+            }
+        }
+
+        function handleStartChoice(choice) {
+            switch(choice) {
+                case 'honest':
+                    updateKarma(20);
+                    break;
+                case 'bribe':
+                    updateKarma(-10);
+                    break;
+                case 'threaten':
+                    updateKarma(-25);
+                    break;
+            }
+            showScene('cerberus');
+        }
+
+        function handleCerberusChoice(choice) {
+            switch(choice) {
+                case 'kind':
+                    updateKarma(15);
+                    break;
+                case 'trick':
+                    updateKarma(-5);
+                    break;
+                case 'fight':
+                    updateKarma(-20);
+                    break;
+            }
+            showScene('judges');
+        }
+
+        function handleJudgesChoice(choice) {
+            switch(choice) {
+                case 'heroic':
+                    updateKarma(25);
+                    break;
+                case 'selfish':
+                    updateKarma(-5);
+                    break;
+                case 'evil':
+                    updateKarma(-30);
+                    break;
+            }
+            showScene('test');
+        }
+
+        function handleTestChoice(choice) {
+            switch(choice) {
+                case 'compassion':
+                    updateKarma(20);
+                    break;
+                case 'wisdom':
+                    updateKarma(10);
+                    break;
+                case 'power':
+                    updateKarma(-15);
+                    break;
+            }
+
+            // Bestimme das Ende basierend auf Karma
+            let destination;
+            if (karma > 25) {
+                destination = 'elysion';
+            } else if (karma < -25) {
+                destination = 'tartaros';
+            } else {
+                destination = 'asphodel';
+            }
+
+            setTimeout(() => showScene(destination), 500);
+        }
+
+        function restart() {
+            karma = 0;
+            updateKarma(0);
+            showScene('start');
+        }
+
+        // Initialisierung
+        updateKarma(0);
+    </script>
+
+</div>
+</body>
+</html>

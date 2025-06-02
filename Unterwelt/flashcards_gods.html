@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greek Gods - Flashcards</title>
+
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="easter_eggs.js" defer></script>
+</head>
+<body>
+<div class="side-nav">
+  <div class="nav-icon">☰</div>
+  <div class="nav-links">
+    <a href="index.html">Intro</a>
+    <a href="flashcards_gods.html">flashcards</a>
+    <a href="götter/hades">hades</a>
+    <a href="götter/cerberus.html">cerberus</a>
+    <a href="götter/charon.html">charon</a>
+    <a href="götter/persephone.html">persephone</a>
+    <a href="myths.html">myths</a>
+    <a href="game.html">the Path through the Underworld</a>
+  </div>
+</div>
+<div class="header">
+  <header>
+    <h1>🏛️ Greek Gods</h1>
+    <p>Click on the cards to flip them</p>
+
+  </header>
+</div>
+<div class = "container">
+  <div class="controls">
+    <button class="btn" onclick="resetAll()">🔄 Reset</button>
+  </div>
+
+  <div class="card-container">
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="card-face card-front">
+        <div class="god-name" id="godName">Zeus</div>
+      </div>
+      <div class="card-face card-back">
+        <div class="god-description" id="godDescription">
+          <ul id="godFacts"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="hint">Click to flip</div>
+  </div>
+
+  <div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="previousCard()">⬅️ Back</button>
+    <div class="card-counter">
+      <span id="currentCard">1</span> / <span id="totalCards">12</span>
+    </div>
+    <button class="nav-btn" id="nextBtn" onclick="nextCard()">Next ➡️</button>
+  </div>
+
+
+</div>
+
+</body>
+</html>

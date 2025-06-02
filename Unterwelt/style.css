@@ -1,0 +1,516 @@
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL PAGE STYLING */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0f1b, #0e1528, #05111f);
+    color: #f0f0f0;
+    font-size: 16px;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.8;
+    background-attachment: fixed; /* Fixiert den Hintergrund */
+    background-position: center;
+    background-size: cover;
+}
+
+/* HEADINGS */
+h1 {
+    text-shadow: 2px 2px 8px #c2a84d;
+    font-size: 3em;
+    color: #444;
+    text-align: center;
+    margin-bottom: 10px;
+}
+header {
+    text-align: center;
+    padding: 2.5rem 1.25rem 1.25rem;
+    background: linear-gradient(135deg, #0f0f1b, #0e1528, #05111f);
+    border-bottom: 0.1875rem solid #c2a84d;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.875rem;
+    border-radius: 0 0 0.9375rem 0.9375rem;
+
+}
+
+
+header h1 {
+    font-size: 3em;
+    color: white;
+    text-shadow: 0.125rem 0.125rem #c2a84d;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+h2{
+    text-shadow: 0.09rem 0.1rem #c2a84d;
+
+}
+h3 {
+    margin: 15px;
+    text-shadow: 0.01rem 0.1rem #c2a84d;
+}
+
+/* MAIN CONTENT CONTAINER */
+section {
+    margin: 30px;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 20px;
+    z-index: -1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #c2a84d;
+
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* FLASHCARD LINK STYLING */
+.linkInFlashcards {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.linkInFlashcards:hover {
+    color: #020a10;
+    transform: scale(1.05);
+}
+
+/* HEADER SECTION */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header p {
+    font-size: 1.3em;
+    opacity: 0.85;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CONTROL BUTTONS */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn,
+.nav-btn {
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    color: #fff;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.btn:hover,
+.nav-btn:hover:not(:disabled) {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* FLASHCARD CONTAINER */
+.card-container {
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+/* FLASHCARD FLIP EFFECT */
+.flashcard {
+    width: 350px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+/* FRONT AND BACK OF CARD */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.flashcard:hover .card-face {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #2c2c2c 0%, #444 100%);
+    color: #f0f0f0;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: #f0f0f0;
+    transform: rotateY(180deg);
+}
+
+/* TEXT STYLING FOR CARD CONTENT */
+.god-name {
+    font-size: 2.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.god-description {
+    font-size: 1.1em;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.card-counter {
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* HINT TEXT ON CARDS */
+.hint {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+    .flashcard {
+        width: 300px;
+        height: 200px;
+    }
+
+    .god-name {
+        font-size: 1.8em;
+    }
+
+    .god-description {
+        font-size: 1.15em;
+        line-height: 1.6;
+        color: #e0e0e0;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* GAME SECTION (Scenes, Choices, etc.) */
+.game-container {
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #2c2c2c;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.game-container h1 {
+    margin: 40px;
+}
+.game-container img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* SUBTITLE UNDER GAME TITLE */
+.subtitle {
+    text-align: center;
+    color: #c0c0c0;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* GAME SCENES */
+.scene {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.scene.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SCENE IMAGES */
+.scene-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #2c2c2c;
+}
+
+.charon, .judges, .elysion, .asphodel, .tartaros {
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+/* STORY TEXT */
+.story-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+/* CHOICE BUTTONS */
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.choice-btn {
+    background: linear-gradient(45deg, #2c2c2c, #444444);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.choice-btn:hover {
+    background: linear-gradient(45deg, #a0522d, #cd853f);
+    border-color: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* KARMA SYSTEM DISPLAY */
+.karma-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #2c2c2c;
+}
+
+.karma-bar {
+    width: 100px;
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.karma-fill {
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.karma-good { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+.karma-neutral { background: linear-gradient(90deg, #95a5a6, #bdc3c7); }
+.karma-bad { background: linear-gradient(90deg, #c0392b, #e74c3c); }
+
+/* RESTART BUTTON */
+.restart-btn {
+    background: linear-gradient(45deg, #04101c, #0a1825);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+    background: linear-gradient(45deg, #0c1621, #161c22);
+    transform: translateY(-2px);
+}
+
+/* FINAL OUTCOME STYLES */
+.final-message {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.elysion-end {
+    background: linear-gradient(45deg, rgba(241, 196, 15, 0.2), rgba(243, 156, 18, 0.2));
+    color: #f1c40f;
+}
+
+.asphodel-end {
+    background: linear-gradient(45deg, rgba(149, 165, 166, 0.2), rgba(189, 195, 199, 0.2));
+    color: #bdc3c7;
+}
+
+.tartaros-end {
+    background: linear-gradient(45deg, rgba(192, 57, 43, 0.2), rgba(231, 76, 60, 0.2));
+    color: #e74c3c;
+}
+
+/* Sidebar Navigation */
+.side-nav {
+    position: fixed;
+    left: 0;
+   transform: translateY(-40%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: width 0.3s ease;
+
+}
+
+.nav-icon {
+    background: #111;
+    color: #fff;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.5em;
+    transition: background 0.3s;
+}
+
+.side-nav:hover .nav-icon {
+    background: #000;
+
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 325%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.side-nav:hover .nav-links {
+    transform: translateX(0%) translateY(-50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 8px 0;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4747;
+}
+/*Door*/
+.backDoorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.backDoor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.doorLeft, .doorRight {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: all 2s ease-in-out;
+}
+
+.doorLeft {
+    transform-origin: left;
+}
+
+.doorRight {
+    transform-origin: right;
+    right:0;
+}
+
+.doorOpenLeft {
+    transform: perspective(1200px) rotateY(-105deg);
+}
+
+.doorOpenRight {
+    transform: perspective(1200px) rotateY(105deg);
+}
+
+
