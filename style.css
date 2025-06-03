@@ -1,5 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
+
 body {
     background-color: #f9f6f1;
     font-family: 'Noto Sans', sans-serif;
@@ -7,6 +8,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 1.25rem;
+    max-width: 100%;
 }
 
 .container {

@@ -22,6 +22,10 @@ body {
     background-size: cover;
 }
 
+.hdr{
+    background: #0f0f1b;
+}
+
 /* HEADINGS */
 h1 {
     text-shadow: 2px 2px 8px #c2a84d;

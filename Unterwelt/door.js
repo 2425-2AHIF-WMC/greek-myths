@@ -31,7 +31,7 @@ function init() {
     let referrer = document.referrer;
     let doorsOpenedBefore = localStorage.getItem("doorsOpened");
 
-    if (referrer.includes("game.html") || !doorsOpenedBefore) {
+    if (referrer.includes("../stories.html") || referrer.includes("../index.html") || referrer.includes("../game.html") || referrer.includes("../greekgods.html") ||  !doorsOpenedBefore) {
         document.getElementById("door").style.display = "block";
     } else {
         document.getElementById("door").style.display = "none";
