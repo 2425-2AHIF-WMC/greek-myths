@@ -27,11 +27,19 @@
 </header>
 <div class="container">
     <h1>Greek God Quiz</h1>
-    <div id="question"></div>
-    <div id="options"></div>
-    <div id="feedback"></div>
-    <div id="next" class="next-btn">Next</div>
+    <div id="question-number"></div>
+    <div id="question-container">
+        <div id="question"></div>
+    </div>
     <div id="result" style="display: none;"></div>
+    <button id="play-again" class="next-btn" style="display: none;">Play Again</button>
+    <div id="options"></div>
+    <div id="feedback-container">
+        <div id="feedback"></div>
+    </div>
+    <div id="buttons-container">
+        <button id="next" class="next-btn">Next</button>
+    </div>
 </div>
 <script src="game.js" type="module" defer></script>
 </body>

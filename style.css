@@ -1,6 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-
 body {
     background-color: #f9f6f1;
     font-family: 'Noto Sans', sans-serif;
@@ -19,6 +18,9 @@ body {
     border: 0.1875rem solid #c2a84d;
     border-radius: 0.9375rem;
     box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 650px;
 }
 
 h1 {
@@ -28,9 +30,31 @@ h1 {
     margin-bottom: 1.5625rem;
 }
 
+#question-number {
+    font-size: 1.2em;
+    color: #2a3d3d;
+    margin-bottom: 1rem;
+}
+
+#result {
+    font-size: 1.5em;
+    color: #c2a84d;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+#question-container {
+    min-height: 100px;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 1.25rem;
+}
+
 #question {
     font-size: 1.6em;
-    margin-bottom: 1.25rem;
     color: #2a3d3d;
 }
 
@@ -38,6 +62,8 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    min-height: 200px;
+    margin-bottom: 1.25rem;
 }
 
 .option-btn {
@@ -55,16 +81,28 @@ h1 {
     background-color: #2a4f4f;
 }
 
+#feedback-container {
+    min-height: 50px;
+    max-height: 50px;
+    overflow-y: auto;
+    margin-bottom: 1.25rem;
+}
+
 #feedback {
-    margin-top: 1.25rem;
     font-size: 1.2em;
     color: #1e3a3a;
 }
 
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
 .next-btn {
-    display: none;
-    margin-top: 1.5625rem;
-    padding: 0.625rem 1.5rem;
+    width: 100%;
+    padding: 0.625rem;
     background-color: #c2a84d;
     color: white;
     border: none;
@@ -78,12 +116,10 @@ h1 {
     background-color: #ab913e;
 }
 
-#result {
-    font-size: 1.5em;
-    color: #c2a84d;
-    margin-top: 1.5625rem;
+.next-btn.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
-
 
 header {
     text-align: center;
@@ -95,7 +131,6 @@ header {
     border-radius: 0 0 0.9375rem 0.9375rem;
 }
 
-
 header h1 {
     font-size: 3em;
     color: #c2a84d;
@@ -105,7 +140,6 @@ header h1 {
     margin: 0;
     text-transform: uppercase;
 }
-
 
 .card-container {
     display: grid;
@@ -169,7 +203,6 @@ header h1 {
     }
 }
 
-
 /* Twin card layout: side-by-side Apollo and Artemis */
 .twin-card .twin-images {
     display: flex;
@@ -202,7 +235,6 @@ header h1 {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-
 
 .intro-card {
     max-width: 600px;

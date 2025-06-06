@@ -19,41 +19,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     const questionDiv = document.getElementById('question');
     const optionsDiv = document.getElementById('options');
     const feedbackDiv = document.getElementById('feedback');
+    const nextBtn = document.getElementById('next');
+    const buttonsContainer = document.getElementById('buttons-container');
 
     try {
         questions = await client.getAllQuestions();
         showQuestion(questions);
-        
+
     } catch (error) {
         console.error('Error loading questions:', error);
         questionDiv.textContent = 'Failed to load quiz questions. Please try again later.';
         feedbackDiv.textContent = `Error: ${error.message}`;
     }
-    
+
 
     function showQuestion(questions) {
-        const nextBtn = document.getElementById('next');
-        const currentQuestion = questions[currentQuestionIndex];
-        console.log(currentQuestion);
-        questionDiv.textContent = currentQuestion.question;
+        const questionNumberDiv = document.getElementById('question-number');
+
+        questionNumberDiv.textContent = `Question: ${currentQuestionIndex + 1} / ${questions.length}`;
+
+        questionDiv.textContent = currentQuestionIndex < questions.length ? questions[currentQuestionIndex].question : '';
         optionsDiv.innerHTML = '';
         feedbackDiv.textContent = '';
-                 
-                currentQuestion.options.forEach(option => {
-                    const button = document.createElement('button');
-                    button.textContent = option.text;
-                    button.className = 'option-btn';
-                    button.onclick = () => checkAnswer(option, button);
-                    optionsDiv.appendChild(button);
 
-                });
+        if (currentQuestionIndex < questions.length) {
+            const currentQuestion = questions[currentQuestionIndex];
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option.text;
+                button.className = 'option-btn';
+                button.onclick = () => checkAnswer(option, button);
+                optionsDiv.appendChild(button);
+            });
 
-                nextBtn.style.display = 'none';
-                
+            nextBtn.style.display = 'block';
+            nextBtn.disabled = true;
+            nextBtn.classList.add('disabled');
+            buttonsContainer.style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('play-again').style.display = 'none';
+        }
     }
 
     function checkAnswer(option, button) {
-        const nextBtn = document.getElementById('next');
         const buttons = document.querySelectorAll('.option-btn');
 
         buttons.forEach(btn => btn.disabled = true);
@@ -68,16 +76,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             feedbackDiv.textContent = `Incorrect! The correct answer is ${correctOption.text}.`;
         }
 
-        nextBtn.style.display = 'block';
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('disabled');
     }
 
     function showResult() {
         questionDiv.style.display = 'none';
         optionsDiv.style.display = 'none';
         feedbackDiv.style.display = 'none';
-        document.getElementById('next').style.display = 'none';
+        nextBtn.style.display = 'none';
         const resultDiv = document.getElementById('result');
+        const playAgainBtn = document.getElementById('play-again');
         resultDiv.style.display = 'block';
+        playAgainBtn.style.display = 'block';
+        buttonsContainer.style.display = 'block';
         resultDiv.textContent = `You got ${score} out of ${questions.length} correct!`;
     }
 
@@ -85,8 +97,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         currentQuestionIndex++;
         if(currentQuestionIndex < questions.length) {
             showQuestion(questions);
-        }else{
+        } else {
             showResult();
         }
+    };
+
+    document.getElementById('play-again').onclick = () => {
+        currentQuestionIndex = 0;
+        score = 0;
+        questionDiv.style.display = 'block';
+        optionsDiv.style.display = 'flex';
+        feedbackDiv.style.display = 'block';
+        showQuestion(questions);
     };
 });
