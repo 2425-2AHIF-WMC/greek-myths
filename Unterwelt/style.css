@@ -117,7 +117,9 @@ section:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
-
+.side-nav{
+    top: 115px;
+}
 .btn,
 .nav-btn {
     padding: 12px 24px;
