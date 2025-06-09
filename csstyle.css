@@ -1,57 +1,5 @@
-/*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-html, body {
-    height: 100%;
-}
-body {
-    background-color: #f9f6f1;
-    overflow: hidden;
-}
-
-.container {
-    position: fixed;
-    top: 7rem;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 60rem;
-    height: calc(100vh - 9rem);
-
-    background-image: url(background1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    border-radius: 0.625rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    z-index: 1;
-
-
-}
-
-.hero-text {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #f9f6f1;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-}*/
 * {
     margin: 0;
     padding: 0;
