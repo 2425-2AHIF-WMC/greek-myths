@@ -23,7 +23,7 @@ body {
     transform: translateX(-50%);
     width: 60rem;
     height: calc(100vh - 9rem);
-    background-image: url(background1.jpg);
+    background-image: url(pics/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
