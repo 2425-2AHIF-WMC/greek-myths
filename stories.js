@@ -1,22 +1,46 @@
-﻿const geschichten = {
-    odyssee: `
-    <h2>Die Odyssee</h2>
-    <p>Die Odyssee erzählt die abenteuerliche Heimreise des Odysseus nach dem Trojanischen Krieg. 
-    Er begegnet Zyklopen, Sirenen und Göttern, bevor er endlich seine Heimat Ithaka erreicht.</p>
-  `,
-    medusa: `
-    <h2>Medusa</h2>
-    <p>Medusa war einst eine schöne Frau, wurde aber von Athene in ein Monster mit Schlangenhaaren verwandelt. 
-    Jeder, der sie ansah, wurde zu Stein. Perseus konnte sie mithilfe eines Spiegels bezwingen.</p>
-  `,
-    ikarus: `
-    <h2>Ikarus</h2>
-    <p>Ikarus und sein Vater Daedalus flohen mit selbstgebauten Flügeln aus dem Labyrinth. 
-    Trotz Warnung flog Ikarus zu nah an die Sonne – das Wachs schmolz, und er stürzte ins Meer.</p>
-  `
+﻿const stories = {
+    odysseus: {
+        title: "The Odyssey",
+        content: `
+          <h2>The Journey of Odysseus</h2>
+          <p>Odysseus, the clever king of Ithaca, embarked on a long journey home after the Trojan War. Facing sirens, cyclopes, storms, and gods, his tale is one of cunning and perseverance.</p>
+          <p>After ten years of war and another ten years of wandering, Odysseus finally returned home to his faithful wife, Penelope.</p>
+        `,
+        trivia: "Odysseus' cunning idea of the Trojan Horse was key to ending the Trojan War."
+    },
+    medusa: {
+        title: "The Curse of Medusa",
+        content: `
+          <h2>Medusa the Gorgon</h2>
+          <p>Medusa, once a beautiful maiden, was cursed by Athena into a monster with snakes for hair. Anyone who looked into her eyes turned to stone.</p>
+          <p>She was eventually slain by the hero Perseus, who used a mirrored shield to avoid her deadly gaze.</p>
+        `,
+        trivia: "Medusa's severed head retained its power and was used by Perseus as a weapon."
+    },
+    icarus: {
+        title: "The Fall of Icarus",
+        content: `
+          <h2>Icarus and Daedalus</h2>
+          <p>Icarus, son of the inventor Daedalus, tried to escape Crete using wings made of feathers and wax. Ignoring his father's warning, he flew too close to the sun.</p>
+          <p>The wax melted, and Icarus fell into the sea, symbolizing the danger of overambition.</p>
+        `,
+        trivia: "The sea where Icarus fell was named the Icarian Sea in his memory."
+    }
 };
 
-function zeigeGeschichte(name) {
-    const content = document.getElementById('content');
-    content.innerHTML = geschichten[name];
+function showStory(key) {
+    const story = stories[key];
+    const contentDiv = document.getElementById("content");
+
+    if (story) {
+        contentDiv.innerHTML = `
+            <article>
+                ${story.content}
+                <div class="trivia-box">
+                    💡 <strong>Trivia:</strong> ${story.trivia}
+                </div>
+            </article>
+        `;
+        contentDiv.scrollIntoView({ behavior: "smooth" });
+    }
 }

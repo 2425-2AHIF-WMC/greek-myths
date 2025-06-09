@@ -1,38 +1,47 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Griechische Götter & Helden</title>
-    <link rel="stylesheet" href="headerstyle.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Greek Gods & Heroic Stories</title>
+<link rel="stylesheet" href="headerstyle.css" />
+<link rel="stylesheet" href="storiesstyle.css" />
 </head>
-<body>
-<header class = "hdr">
-    <nav class = "navbar">
-        <a href="index.html">Home</a>
-        <a href = "greekgods.html">Greek Gods</a>
-        <a href = "stories.html">Heroic Stories</a>
-        <a href = "Unterwelt/index.html">Underworld</a>
-        <a href = "game.html">Quiz</a>
-    </nav>
-    <form action = "#" class = "search-bar">
-        <input type = "text" placeholder = "Search...">
-    </form>
-</header>
 <header>
-    <h1>Griechische Götter & Heldengeschichten</h1>
+    <h1>Greek Heroic Stories</h1>
 </header>
+<body>
+<main>
+  
+    <header class="hdr">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="greekgods.html">Greek Gods</a>
+            <a href="stories.html">Heroic Stories</a>
+            <a href="Unterwelt/index.html">Underworld</a>
+            <a href="game.html">Quiz</a>
+        </nav>
+      
+    </header>
 
-<nav>
-    <button onclick="zeigeGeschichte('odyssee')">Odyssee</button>
-    <button onclick="zeigeGeschichte('medusa')">Medusa</button>
-    <button onclick="zeigeGeschichte('ikarus')">Ikarus</button>
-</nav>
-
-<main id="content">
-    <p>Wähle eine Geschichte aus der Navigation oben.</p>
+    <section class="card-container">
+        <div class="story-card" onclick="showStory('odysseus')">
+            <img src="odyssey.jpg" alt="Odysseus" />
+            <h3>The Odyssey</h3>
+        </div>
+        <div class="story-card" onclick="showStory('medusa')">
+            <img src="medusa.jpg" alt="Medusa" />
+            <h3>Medusa</h3>
+        </div>
+        <div class="story-card" onclick="showStory('icarus')">
+            <img src="icarus.jpg" alt="Icarus" />
+            <h3>Icarus</h3>
+        </div>
+    </section>
+    
+    <section id="content" class="story-detail"></section>
 </main>
-
-<script src="script.js"></script>
+<script src="stories.js"></script>
 </body>
 </html>

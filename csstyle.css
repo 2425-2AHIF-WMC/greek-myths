@@ -1,4 +1,4 @@
-*{
+/*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,28 +11,26 @@ html, body {
 body {
     background-color: #f9f6f1;
     overflow: hidden;
- 
- }
-
+}
 
 .container {
-        position: fixed;
-        top: 7rem;
-        left: 50%;
-        transform: translateX(-50%);
+    position: fixed;
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
 
-        width: 60rem;
-        height: calc(100vh - 9rem);
-    
-        background-image: url(background1.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    width: 60rem;
+    height: calc(100vh - 9rem);
 
-        border-radius: 0.625rem;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-        z-index: 1;
-    
+    background-image: url(background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    z-index: 1;
+
 
 }
 
@@ -53,4 +51,95 @@ body {
 
 .hero-text p {
     font-size: 1.2rem;
+}*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f9f6f1;
+    overflow: hidden;
+}
+
+.container {
+    position: fixed;
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60rem;
+    height: calc(100vh - 9rem);
+    background-image: url(background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.hero-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f9f6f1;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+.circle-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.circle-text {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: spin 20s linear infinite;
+}
+
+#circularText span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0 0;
+    font-size: 14px;
+    color: #2c2c2c;
+    white-space: pre;
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #2c2c2c;
+    pointer-events: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
