@@ -41,7 +41,6 @@
     transition: color 0.3s ease;
     line-height: 1.5;
     display:inline-block;
-    padding: 0.5rem 0;
 }
 
 .navbar a:hover {
