@@ -22,55 +22,57 @@
 
   </nav>
 </header>
+<header>
+    <h1>Ritual-Simulator</h1>
+</header>
 <div class="container">
   <h1>Ritual-Simulator</h1>
 
   <form id="ritualForm">
-    <label>Opfergabe:
+    <label>Offering:
       <select id="offering">
-        <option value="schwein">Schwein</option>
-        <option value="fisch">Fisch</option>
-        <option value="wein">Wein</option>
-        <option value="blumen">Blumen</option>
+        <option value="schwein">Pig</option>
+        <option value="fisch">Fish</option>
+        <option value="wein">Wine</option>
+        <option value="blumen">Flowers</option>
       </select>
     </label>
 
-    <label>Ort:
+    <label>Location:
       <select id="location">
-        <option value="berg">Berg</option>
-        <option value="meer">Meer</option>
-        <option value="tempel">Tempel</option>
-        <option value="wald">Wald</option>
+        <option value="berg">Mountain</option>
+        <option value="meer">Ocean</option>
+        <option value="tempel">Temple</option>
+        <option value="wald">Forest</option>
       </select>
     </label>
 
-    <label>Wunsch:
+    <label>Wish:
       <select id="wish">
-        <option value="regen">Regen</option>
-        <option value="sieg">Sieg im Krieg</option>
-        <option value="liebe">Liebe</option>
-        <option value="schatz">Schatz finden</option>
+        <option value="regen">Rain</option>
+        <option value="sieg">Victory in war</option>
+        <option value="liebe">Love</option>
+        <option value="schatz">Finding Treasure</option>
       </select>
     </label>
 
-    <label>Gottheit:
+    <label>Deity:
       <select id="god">
-        <option value="poseidon">Poseidon (Meer)</option>
-        <option value="aphrodite">Aphrodite (Liebe)</option>
-        <option value="ares">Ares (Krieg)</option>
-        <option value="demeter">Demeter (Ernte)</option>
-        <option value="hades">Hades (Unterwelt)</option>
+        <option value="poseidon">Poseidon (Ocean)</option>
+        <option value="aphrodite">Aphrodite (Love)</option>
+        <option value="ares">Ares (War)</option>
+        <option value="demeter">Demeter (Harvest)</option>
+        <option value="hades">Hades (Underworld)</option>
       </select>
     </label>
 
 
-    <button type="submit" class = "next-btn">Ritual durchführen</button>
+    <button type="submit" class = "next-btn">Carry Out Ritual</button>
   </form>
 
   <div id="resultBox">
-    <h2>Reaktion des Gottes:</h2>
+    <h2>The God's Reaction:</h2>
     <p id="reactionText">...</p>
-
   </div>
 </div>
 

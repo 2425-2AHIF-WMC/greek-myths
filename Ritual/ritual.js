@@ -17,17 +17,17 @@ document.getElementById("ritualForm").addEventListener("submit", function (e) {
     let altText = "";
 
     if (rating >= 7) {
-        message = "✨ Der Gott ist äußerst zufrieden. Dein Wunsch wird erfüllt!";
+        message = "✨ The god is extremely pleased. Your wish will be granted!";
         imgSrc = "assets/god-happy.png";
-        altText = "Gott ist erfreut";
+        altText = "Gott is happy";
     } else if (rating >= 4) {
-        message = "😐 Der Gott ist neutral. Vielleicht hast du Glück...";
+        message = "😐 The god is neutral. Maybe you'll get lucky...";
         imgSrc = "assets/god-neutral.png";
-        altText = "Gott ist nachdenklich";
+        altText = "God is pensive";
     } else {
-        message = "⚡ Der Gott ist erzürnt! Dein Wunsch bleibt unerfüllt – oder schlimmer...";
+        message = "⚡ The god is enraged! Your wish remains unfulfilled – or worse...";
         imgSrc = "assets/god-angry.png";
-        altText = "Gott ist wütend";
+        altText = "God is angry";
     }
     document.body.className = `${god} ${rating >= 7 ? "happy" : rating >= 4 ? "neutral" : "angry"}`;
 

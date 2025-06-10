@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-document.addEventListener('DOMContentLoaded',  () => {
+﻿document.addEventListener('DOMContentLoaded',  () => {
     const subscribeBtn = document.getElementById('subscribeBtn');
     
     subscribeBtn.addEventListener('click',() => {
@@ -25,7 +20,7 @@ document.addEventListener('DOMContentLoaded',  () => {
         emailjs.send('service_GreekMyths', 'template_NewsLetter', templateParams).then(
             (response) => {
         console.log('SUCCESS!', response.status, response.text);
-            alert.success("Thanks for signing up!");
+            alert("Thanks for signing up!");
             },
             (error) => {
                 console.log('FAILED...', error);
