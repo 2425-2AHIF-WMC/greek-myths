@@ -43,12 +43,35 @@
             <img src="../pics/icarus.jpg" alt="Icarus" />
             <h3>Icarus</h3>
         </div>
+        
+        <div class = "story-card" onclick = "showStory ('hercules')">
+            <img src="../pics/hercules.jpg" alt="Hercules" />
+            <h3>Hercules</h3>
+        </div>
+        
+        <div class="story-card" onclick="showStory('achilles')">
+            <img src="../pics/achilles.jpg" alt="Achilles" />
+            <h3>Achilles</h3>
+        </div>
+        
+        <div class="story-card" onclick = "showStory('theseus')">
+            <img src="../pics/theseus.jpg" alt="Theseus" />
+            <h3>Theseus</h3>
+        </div>
+        
     </section>
     
     <section id="content" class="story-detail"></section>
 </main>
-<div id="stone-overlay" class="stone-overlay">
 
+<div id="stone-overlay" class="stone-overlay"></div>
+
+<div id="oracle-container" title="Seek your fate...">🔮</div>
+
+<div id="oracle-message" class="hidden">
+    <h2>Your prophecy:</h2>
+    <p id="prophecy-text"></p>
+    <button onclick="closeOracle()">Close</button>
 </div>
 
 <script src="stories.js"></script>

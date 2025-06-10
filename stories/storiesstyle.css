@@ -164,4 +164,59 @@ header h1 {
     user-select: none;
 }
 
+#oracle-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+#oracle-container:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+#oracle-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: darkgray;
+    color: lightgoldenrodyellow;
+    padding: 20px 30px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    z-index: 2000;
+    display: none;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+#oracle-message h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+#oracle-message button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: #f0d878;
+    border: none;
+    border-radius: 5px;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
 
