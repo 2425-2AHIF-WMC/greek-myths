@@ -130,7 +130,7 @@ header h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Stone overlay styles */
+
 .stone-overlay {
     position: fixed;
     top: 0;
@@ -186,10 +186,10 @@ header h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: darkgray;
-    color: lightgoldenrodyellow;
+    background-color: #f9f6f1 ;
+    color: black;
     padding: 20px 30px;
-    border: 2px solid #444;
+    border: 2px solid #c2a84d;
     border-radius: 10px;
     font-family: 'Georgia', serif;
     text-align: center;
@@ -200,7 +200,7 @@ header h1 {
 #oracle-message h2 {
     margin-top: 0;
     font-size: 1.4rem;
-    color: #fff;
+    color: black;
     margin-bottom: 10px;
 }
 
