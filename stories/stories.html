@@ -30,10 +30,12 @@
             <img src="../pics/odyssey.jpg" alt="Odysseus" />
             <h3>The Odyssey</h3>
         </div>
-        <div class="story-card" onclick="showStory('medusa')">
+        <div class="story-card" id = "Medusa" onclick="showStory('medusa'); petrify()" >
             <img src="../pics/medusa.jpg" alt="Medusa" />
+
             <h3>Medusa</h3>
         </div>
+
         <div class="story-card" onclick="showStory('icarus')">
             <img src="../pics/icarus.jpg" alt="Icarus" />
             <h3>Icarus</h3>
@@ -42,6 +44,11 @@
     
     <section id="content" class="story-detail"></section>
 </main>
+<div id="stone-overlay" class="stone-overlay">
+
+</div>
+
 <script src="stories.js"></script>
 </body>
+
 </html>

@@ -44,3 +44,43 @@ function showStory(key) {
         contentDiv.scrollIntoView({ behavior: "smooth" });
     }
 }
+
+function petrify() {
+    const overlay = document.getElementById('stone-overlay');
+    const body = document.body;
+
+    // Add petrified class to disable interactions
+    body.classList.add('petrified');
+
+    // Show stone overlay
+    overlay.classList.add('active');
+
+
+
+    // Remove petrification after 3 seconds
+    setTimeout(() => {
+        overlay.classList.remove('active');
+
+        // Wait for fade out animation to complete before removing petrified state
+        setTimeout(() => {
+            body.classList.remove('petrified');
+            // Then show the actual Medusa story
+            showStory('medusa');
+        }, 500);
+
+    }, 3000);
+}
+
+
+// Prevent right-click and other interactions during petrification
+document.addEventListener('contextmenu', function(e) {
+    if(document.body.classList.contains('petrified')) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if(document.body.classList.contains('petrified')) {
+        e.preventDefault();
+    }
+});

@@ -8,6 +8,8 @@ function toggleDoors() {
         let underworld = document.getElementById("Underworld");
         underworld.style.display = "block";
         underworld.style.position = "absolute";
+        document.body.style.overflow = "auto";
+
         underworld.style.top = "1";
         underworld.style.zIndex = "1000";
     }, 1500);
@@ -31,6 +33,9 @@ function init() {
     let referrer = document.referrer;
 
     if (referrer.includes("stories.html") || referrer.includes("index.html") || referrer.includes("game.html") || referrer.includes("greekgods.html") ) {
+        document.getElementById("Underworld").style.display = "none";
+        document.body.style.overflow = "hidden";
+
         document.getElementById("door").style.display = "block";
     } else {
         document.getElementById("door").style.display = "none";

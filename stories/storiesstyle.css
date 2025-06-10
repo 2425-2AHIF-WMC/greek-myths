@@ -130,4 +130,38 @@ header h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
+/* Stone overlay styles */
+.stone-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../pics/stone_medus.jpg');
+    background-size: cover;
+    background-color: rgba(100, 100, 100, 0.8);
+    z-index: 9999;
+    visibility: hidden; /* Versteckt das Overlay, ohne es aus dem Flow zu nehmen */
+    opacity: 0;
+    transition: opacity 2s ease-in-out, visibility 3s ease-in-out;
+    pointer-events: none;
+}
+
+.stone-overlay.active {
+    visibility: visible;
+    opacity: 0.5;
+    pointer-events: all;
+}
+
+
+.petrified {
+    pointer-events: none;
+    user-select: none;
+}
+
+.petrified * {
+    pointer-events: none;
+    user-select: none;
+}
+
 
