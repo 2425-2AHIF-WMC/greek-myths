@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../greek%20gods/style.css">
+    <link rel="stylesheet" href="../headerstyle.css">
+
+    <title>Greek Gods DNA Calculator</title>
+    <script src="DNA Calculator.js" defer></script>
+
+</head>
+<body>
+<header class = "hdr">
+    <nav class = "navbar">
+        <a href="../index.html">Home</a>
+        <a href = "../greek%20gods/greekgods.html">Greek Gods</a>
+        <a href = "../stories/stories.html">Heroic Stories</a>
+        <a href = "../Unterwelt/index.html">Underworld</a>
+        <a href = "../game/game.html">Quiz</a>
+        <a href="DNA%20Calculator.html">DNA Calculator</a>
+    </nav>
+</header>
+<header>
+    <h1>Greek Gods DNA Calculator</h1>
+    <p class="subtitle">Discover your divine ancestry through personality analysis</p>
+</header>
+
+<div class="container">
+    <div id="quiz-container" class="quiz-card">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="question-counter" id="question-counter">Question 1 of 10</div>
+
+        <div class="question" id="question">
+            Loading your divine assessment...
+        </div>
+
+        <div class="options-grid" id="options-grid">
+        </div>
+
+        <button class="next-btn" id="next-btn" disabled>Next Question</button>
+    </div>
+
+    <div id="result-container" class="result-card" style="display: none;">
+        <div class="god-image" id="god-image">⚡</div>
+        <div class="god-name" id="god-name">Zeus</div>
+        <div class="god-title" id="god-title">King of the Gods</div>
+        <div class="match-percentage" id="match-percentage">85%</div>
+        <div class="god-description" id="god-description">
+            Your personality aligns with the mighty Zeus! You are a natural born leader...
+        </div>
+
+        <div class="traits-grid" id="traits-grid">
+        </div>
+
+        <button class="restart-btn" id="restart-btn">Take Quiz Again</button>
+    </div>
+</div>
+
+</body>
+</html>

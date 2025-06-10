@@ -17,7 +17,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         "„Nichts im Übermaß.“",
         "„Der Weise zweifelt, der Tor ist sich sicher.“",
         "„Du wirst herrschen, wenn du dich selbst beherrschst.“",
-        "„Auch dein Weg ist vom Schicksal gezeichnet.“"
+        "„Auch dein Weg ist vom Schicksal gezeichnet.“",
+        "„Das Schicksal lenkt jene, die folgen – und zieht jene, die sich widersetzen.“",
+        "„Die Wahrheit liegt nicht in den Sternen, sondern in deinem Herzen.“",
+        "„Wer den Schatten fürchtet, verkennt das Licht.“",
+        "„Nicht der erste Schritt zählt, sondern die Richtung, die du wählst.“",
+        "„Geduld ist die stärkste Waffe des Weisen.“",
+        "„Wenn du am Abgrund stehst, bedenke: Vielleicht lernst du fliegen.“"
     ];
     let questions = [];
     let currentQuestionIndex = 0;
@@ -57,19 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         resultDiv.textContent = `You got ${score} out of ${questions.length} correct!`;
 
-        const oracles = [
-            "„Erkenne dich selbst.“",
-            "„Nichts im Übermaß.“",
-            "„Der Weise zweifelt, der Tor ist sich sicher.“",
-            "„Du wirst herrschen, wenn du dich selbst beherrschst.“",
-            "„Auch dein Weg ist vom Schicksal gezeichnet.“",
-            "„Das Schicksal lenkt jene, die folgen – und zieht jene, die sich widersetzen.“",
-            "„Die Wahrheit liegt nicht in den Sternen, sondern in deinem Herzen.“",
-            "„Wer den Schatten fürchtet, verkennt das Licht.“",
-            "„Nicht der erste Schritt zählt, sondern die Richtung, die du wählst.“",
-            "„Geduld ist die stärkste Waffe des Weisen.“",
-            "„Wenn du am Abgrund stehst, bedenke: Vielleicht lernst du fliegen.“"
-        ];
+
 
         const randomIndex = Math.floor(Math.random() * oracles.length);
         oracleText.textContent = oracles[randomIndex];
