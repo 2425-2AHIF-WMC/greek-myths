@@ -32,7 +32,7 @@ function init() {
 
     let referrer = document.referrer;
 
-    if (referrer.includes("stories.html") || referrer.includes("index.html") || referrer.includes("game.html") || referrer.includes("greekgods.html") || referrer.includes("DNA%20Calculator.html") ) {
+    if (referrer.includes("stories.html") || referrer.includes("index.html") || referrer.includes("game.html") || referrer.includes("greekgods.html") || referrer.includes("DNA%20Calculator.html") || referrer.includes("ritual.html")) {
         document.getElementById("Underworld").style.display = "none";
         document.body.style.overflow = "hidden";
 

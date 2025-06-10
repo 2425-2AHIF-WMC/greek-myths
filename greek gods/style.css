@@ -1,4 +1,9 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: #f9f6f1;
@@ -10,11 +15,12 @@ body {
     padding-right: 1.25rem;
     padding-top:5rem;
     max-width: 100%;
+
 }
 
 .container {
     max-width: 37.5rem;
-    margin: 0 auto;
+    margin: 30px auto;
     background: linear-gradient(to bottom, #fffdf5, #f2f5f3);
     padding: 1.875rem 1.5625rem;
     border: 0.1875rem solid #c2a84d;
@@ -444,3 +450,113 @@ header h1 {
     color: #ffd700;
     margin-bottom: 0.5rem;
 }
+
+/*Ritual*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+}
+
+
+body.poseidon {
+    background: linear-gradient(to bottom, #0077be, #001f3f);
+}
+
+body.aphrodite {
+    background: linear-gradient(to bottom, #ff69b4,#ffc0cb);
+
+    color: #300;
+}
+
+body.ares {
+    background: linear-gradient(to bottom, #8b0000, #ff0000);
+}
+
+body.demeter {
+    background: linear-gradient(to bottom, #98fb98, #228b22);
+    color: #222;
+}
+
+body.hades {
+    background: linear-gradient(to bottom, #2c2c2c, #000000);
+}
+
+body {
+    transition: background 1s ease, color 0.5s ease;
+}
+
+body.poseidon.happy {
+    background: linear-gradient(to bottom, #00bfff, #66ccff);
+}
+body.poseidon.angry {
+    background: linear-gradient(to bottom, #001f3f, #000000);
+}
+body.aphrodite.happy {
+    background: linear-gradient(to bottom, #ffb6c1, #ffe4e1);
+}
+
+body.aphrodite.angry {
+    background: linear-gradient(to bottom, #8b0000, #ff1493);
+    position: relative;
+}
+
+body.aphrodite.angry::after {
+    content: '💔';
+    font-size: 5rem;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulse-crack 1s infinite;
+}
+
+@keyframes pulse-crack {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50% { transform: translateX(-50%) scale(1.1); opacity: 0.6; }
+}
+body.ares.happy {
+    background: linear-gradient(to bottom, #b22222, #ff6347);
+}
+
+body.ares.angry {
+    background: linear-gradient(to bottom, #8b0000, #000000);
+    animation: flames 1s infinite alternate;
+}
+
+body.demeter.happy {
+    background: linear-gradient(to bottom, #adff2f, #4c9404);
+}
+
+body.demeter.angry {
+    background: linear-gradient(to bottom, #556b2f, #2f4f4f);
+    animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+
+body.hades.angry {
+    background: black;
+    animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { background-color: #000; }
+    50% { background-color: #222; }
+}
+
+
+

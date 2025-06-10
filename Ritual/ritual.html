@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ritual-Simulator</title>
+  <link rel="stylesheet" href="../greek gods/style.css">
+  <script src="ritual.js" defer></script>
+  <link rel="stylesheet" href="../headerstyle.css">
+</head>
+<body>
+<header class = "hdr">
+  <nav class = "navbar">
+    <a href="../index.html">Home</a>
+    <a href = "../greek%20gods/greekgods.html">Greek Gods</a>
+    <a href = "../stories/stories.html">Heroic Stories</a>
+    <a href = "../Unterwelt/index.html">Underworld</a>
+    <a href = "../game/game.html">Quiz</a>
+    <a href="../DNA-Test/DNA%20Calculator.html">DNA Calculator</a>
+    <a href="ritual.html">Ritual</a>
+      <a href = "../Newsletter/newsletter.html">Newsletter</a>
+
+  </nav>
+</header>
+<div class="container">
+  <h1>Ritual-Simulator</h1>
+
+  <form id="ritualForm">
+    <label>Opfergabe:
+      <select id="offering">
+        <option value="schwein">Schwein</option>
+        <option value="fisch">Fisch</option>
+        <option value="wein">Wein</option>
+        <option value="blumen">Blumen</option>
+      </select>
+    </label>
+
+    <label>Ort:
+      <select id="location">
+        <option value="berg">Berg</option>
+        <option value="meer">Meer</option>
+        <option value="tempel">Tempel</option>
+        <option value="wald">Wald</option>
+      </select>
+    </label>
+
+    <label>Wunsch:
+      <select id="wish">
+        <option value="regen">Regen</option>
+        <option value="sieg">Sieg im Krieg</option>
+        <option value="liebe">Liebe</option>
+        <option value="schatz">Schatz finden</option>
+      </select>
+    </label>
+
+    <label>Gottheit:
+      <select id="god">
+        <option value="poseidon">Poseidon (Meer)</option>
+        <option value="aphrodite">Aphrodite (Liebe)</option>
+        <option value="ares">Ares (Krieg)</option>
+        <option value="demeter">Demeter (Ernte)</option>
+        <option value="hades">Hades (Unterwelt)</option>
+      </select>
+    </label>
+
+
+    <button type="submit" class = "next-btn">Ritual durchführen</button>
+  </form>
+
+  <div id="resultBox">
+    <h2>Reaktion des Gottes:</h2>
+    <p id="reactionText">...</p>
+
+  </div>
+</div>
+
+</body>
+</html>
