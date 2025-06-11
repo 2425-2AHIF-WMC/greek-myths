@@ -20,7 +20,8 @@ body {
 
 .container {
     max-width: 37.5rem;
-    margin: 30px auto;
+    margin: 0 auto;
+    top: 30px;
     background: linear-gradient(to bottom, #fffdf5, #f2f5f3);
     padding: 1.875rem 1.5625rem;
     border: 0.1875rem solid #c2a84d;
@@ -537,7 +538,7 @@ body.aphrodite.angry::after {
     content: '💔';
     font-size: 5rem;
     position: absolute;
-    top: 20px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     animation: pulse-crack 1s infinite;
