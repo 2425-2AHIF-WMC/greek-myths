@@ -12,19 +12,7 @@
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const oracles = [
-        "„Erkenne dich selbst.“",
-        "„Nichts im Übermaß.“",
-        "„Der Weise zweifelt, der Tor ist sich sicher.“",
-        "„Du wirst herrschen, wenn du dich selbst beherrschst.“",
-        "„Auch dein Weg ist vom Schicksal gezeichnet.“",
-        "„Das Schicksal lenkt jene, die folgen – und zieht jene, die sich widersetzen.“",
-        "„Die Wahrheit liegt nicht in den Sternen, sondern in deinem Herzen.“",
-        "„Wer den Schatten fürchtet, verkennt das Licht.“",
-        "„Nicht der erste Schritt zählt, sondern die Richtung, die du wählst.“",
-        "„Geduld ist die stärkste Waffe des Weisen.“",
-        "„Wenn du am Abgrund stehst, bedenke: Vielleicht lernst du fliegen.“"
-    ];
+
     let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -45,29 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         feedbackDiv.textContent = `Error: ${error.message}`;
     }
 
-    function showDelphi() {
-        questionDiv.style.display = 'none';
-        optionsDiv.style.display = 'none';
-        feedbackDiv.style.display = 'none';
-        nextBtn.style.display = 'none';
 
-        const resultDiv = document.getElementById('result');
-        const playAgainBtn = document.getElementById('play-again');
-        const oracleContainer = document.getElementById('oracle-container');
-        const oracleText = document.getElementById('oracle-text');
-
-        resultDiv.style.display = 'block';
-        playAgainBtn.style.display = 'block';
-        buttonsContainer.style.display = 'block';
-        oracleContainer.style.display = 'block';
-
-        resultDiv.textContent = `You got ${score} out of ${questions.length} correct!`;
-
-
-
-        const randomIndex = Math.floor(Math.random() * oracles.length);
-        oracleText.textContent = oracles[randomIndex];
-    }
 
     function showQuestion(questions) {
         const questionNumberDiv = document.getElementById('question-number');
@@ -148,21 +114,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
 
-// Klick-Event für das Orakel
-    document.getElementById('oracle-container').addEventListener('click', () => {
-        const oracleText = document.getElementById('oracle-text');
-        const randomIndex = Math.floor(Math.random() * oracles.length);
-        oracleText.textContent = oracles[randomIndex];
 
-        // Setze Event-Listener HIER
-        const oracleContainer = document.getElementById('oracle-container');
-        oracleContainer.onclick = () => {
-            let newText;
-            do {
-                newText = oracles[Math.floor(Math.random() * oracles.length)];
-            } while (oracleText.textContent === newText);
-            oracleText.textContent = newText;
-        };
-    });
 
 });

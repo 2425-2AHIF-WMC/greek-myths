@@ -346,3 +346,4 @@ function init() {
 
 // Start the quiz when page loads
 window.addEventListener('load', init);
+
